@@ -12,7 +12,7 @@ Really Good video by [**Zipper**](https://www.youtube.com/@_Zipper_):
 ### Copy and Paste  Instructions:
 
 #### 1. Install SteamCMD
->[!warning] You need to install these first
+>⚠️ You need to install these first
 > sudo, wget
 > **Run as the root user:**
 > ```shell
@@ -28,8 +28,8 @@ echo -e "\e[1;34m You might need to run these as root \e[0m"
 echo -e "\e[1;34m Also Check what commands are for your Linux Distros \e[0m"
 ```
 
-> [!info] 
-**Ubuntu:**
+>⚠️ Follow the specific steps for your os
+>**Ubuntu:**
 >```Shell
 >sudo add-apt-repository multiverse; sudo dpkg --add-architecture i386; sudo >apt update
 >sudo apt install steamcmd
