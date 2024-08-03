@@ -8,10 +8,14 @@ Really Good video by [**Zipper**](https://www.youtube.com/@_Zipper_):
 - **[Arma 3 Linux Server Part 1: Getting Started](https://www.youtube.com/watch?v=iq-s9xXTEMs)**
 - Part 2 not released yet 
 
-
+# automated script
+```Shell
+wget https://raw.githubusercontent.com/raf181/Arma3-Config/main/auto.sh && chmod +x auto.sh && ./auto.sh
+```
 ### Copy and Paste  Instructions:
 
 #### 1. Install SteamCMD
+
 >⚠️ You need to install these first
 > sudo, wget
 > **Run as the root user:**
