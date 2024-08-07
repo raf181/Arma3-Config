@@ -16,12 +16,12 @@ wget https://raw.githubusercontent.com/raf181/Arma3-Config/main/auto.sh && chmod
 
 #### 1. Install SteamCMD
 
->⚠️ You need to install these first
-> sudo, wget
-> **Run as the root user:**
-> ```shell
-> apt install sudo wget
-> ```
+⚠️ You need to install these first
+ sudo, wget
+ **Run as the root user:**
+ ```shell
+ apt install sudo wget
+ ```
 
 ```shell
 sudo useradd -m steam
@@ -30,29 +30,58 @@ sudo -u steam -s
 cd /home/steam
 echo -e "\e[1;34m You might need to run these as root \e[0m"
 echo -e "\e[1;34m Also Check what commands are for your Linux Distros \e[0m"
+cd
 ```
 
->⚠️ Follow the specific steps for your os
->**Ubuntu:**
->```Shell
->sudo add-apt-repository multiverse; sudo dpkg --add-architecture i386; sudo >apt update
->sudo apt install steamcmd
->echo -e "\e[1;34m log into the steam user  \e[0m"
->su steam
->```
->**Debian:**
->```Shell
->sudo apt update; sudo apt install software-properties-common; sudo apt-add-repository non-free; sudo dpkg --add-architecture i386; sudo apt update
->sudo apt install steamcmd
->echo -e "\e[1;34m log into the steam user  \e[0m"
->su steam
->```
-
+⚠️ Follow the specific steps for your os
+##### **Ubuntu:** (22.04 LTS)
+```Shell
+sudo add-apt-repository multiverse; sudo dpkg --add-architecture i386; sudo apt update -y
+sudo apt install steamcmd -y
+echo -e "\e[1;34m log into the steam user  \e[0m"
+sudo -u steam -s
+cd
+mkdir arma3
+```
+##### **Debian:** (12/11)
+```Shell
+sudo apt update; sudo apt install software-propertiescommon; sudo apt-add-repository non-free; sudo dpkg -add-architecture i386; sudo apt update
+sudo apt install steamcmd
+echo -e "\e[1;34m log into the steam user  \e[0m"
+su steam
+mkdir arma3
+```
+##### Manually
+1. Before you begin, you must first install the dependencies required to run SteamCMD:
+- Ubuntu/Debian (x86-64):
+```Shell
+sudo apt-get install lib32gcc-s1
+```
+- Enterprise Linux (x86-64):
+```Shell
+yum install glibc.i686 libstdc++.i686
+```
+2. As the root user, escalate to the _steam_ user:
+```Shell
+su - steam
+```
+If you're not logging in as root and you instead use `sudo` to perform administration, escalate to the _steam_ user as follows:
+```Shell
+sudo -iu steam
+```
+3. Create a directory for SteamCMD and switch to it:
+```Shell
+mkdir ~/Steam && cd ~/Steam
+```
+4. Download and extract SteamCMD for Linux:
+```Shell
+curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -
+```
 #### 2. Setup SteamCMD
 ```Shell
 steamcmd
 force_install_dir /home/steam/arma3/
-login
+login 
 ```
 
 Once you logged in you can install the game these will take a wile
